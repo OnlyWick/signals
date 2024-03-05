@@ -38,7 +38,8 @@
     "ci:test": "pnpm lint && pnpm test",
     "release": "pnpm changeset version && pnpm install && git add -A && git commit -m 'Version Packages' && changeset tag && pnpm publish -r",
     "prepare": "husky install",
-    "format": "prettier --ignore-path .gitignore --write '**/*.{js,jsx,ts,tsx,yml,json,md}'"
+    "format": "prettier --ignore-path .gitignore --write '**/*.{js,jsx,ts,tsx,yml,json,md}'",
+    "r": "ts-node packages/core/test/mytest.ts"
   },
   "authors": [
     "The Preact Authors (https://github.com/preactjs/signals/contributors)"

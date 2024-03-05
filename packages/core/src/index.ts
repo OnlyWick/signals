@@ -735,7 +735,7 @@ Effect.prototype._start = function () {
 
 	/*@__INLINE__**/ startBatch();
 	const prevContext = evalContext;
-	evalContext = this;
+	evalContext = this; // create breakpoint right here
 	return endEffect.bind(this, prevContext);
 };
 
@@ -768,12 +768,4 @@ function effect(compute: () => unknown | EffectCleanup): () => void {
 	return effect._dispose.bind(effect);
 }
 
-export {
-	signal,
-	computed,
-	effect,
-	batch,
-	Signal,
-	ReadonlySignal,
-	untracked,
-};
+export { signal, computed, effect, batch, Signal, ReadonlySignal, untracked };
